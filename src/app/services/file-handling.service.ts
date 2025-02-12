@@ -12,7 +12,9 @@ export class FileHandlingService {
      fileContents: any = '';
      fileList: string[] = [];
      
-     async createFile() {
+     async createFile(fileName: string, fileContents: string) {
+         this.fileName = fileName;
+         this.fileContents = fileContents;
          try {
             await Filesystem.writeFile({
               path: this.fileName,

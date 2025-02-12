@@ -16,7 +16,7 @@ export class StateHandlingService {
      async loadStateFromPreferences() {
          const storedState = await Preferences.get({ key: 'appState' });
          if(storedState.value){
-            this.appState = JSON.parse(storedState.value) ?? this.appState;
+            this.appState = JSON.parse(storedState.value);
          }
      } 
 
@@ -38,7 +38,7 @@ export class StateHandlingService {
 
      async clearState() {
         await Preferences.remove({ key: 'appState' });
-        this.state = {
+        this.appState = {
           username: '',
           isLoggedIn: false,
         };

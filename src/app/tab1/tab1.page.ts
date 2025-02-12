@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FileHandlingService } from '../services/file-handling.service';
 
 @Component({
   selector: 'app-tab1',
@@ -8,6 +9,13 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  fileName:string = '';
+  fileContents: string = '';
+
+  constructor(private fServices: FileHandlingService) {}
+
+  fileCreate(){
+    this.fServices.createFile(this.fileName, this.fileContents);
+  }
 
 }

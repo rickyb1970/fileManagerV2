@@ -9,7 +9,7 @@ export class FileHandlingService {
      constructor() { }
 
      fileName: string = '';
-     fileContents: any = '';
+     fileContents: string | any = '';
      fileList: string[] = [];
      
      async createFile(fileName: string, fileContents: string) {

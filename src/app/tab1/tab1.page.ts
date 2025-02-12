@@ -14,8 +14,18 @@ export class Tab1Page {
 
   constructor(private fServices: FileHandlingService) {}
 
-  fileCreate(){
-    this.fServices.createFile(this.fileName, this.fileContents);
-  }
+    fileCreate(){
+      if(this.checkFileName()){
+          this.fServices.createFile(this.fileName, this.fileContents);
+      } else {
+          alert("The file name is empty.");
+          
+      }
+    }
+
+    private checkFileName(): boolean {
+       return (this.fileName === '') ? false : true;
+    }
+
 
 }

@@ -36,8 +36,32 @@ export class FileHandlingService {
             }); 
             this.fileContents = fileContents.data;
          } catch (error) {
-            alert()    
+            alert("Error encountered reading file. {error}");    
          }
      }
 
+     async deleteFile() {
+         try {
+            await Filesystem.deleteFile({
+              path: this.fileName,
+              directory: Directory.Documents,
+            }); 
+            alert("File deleted successfully.");
+         } catch (error) {
+            alert("Error deleting file. {error}");
+         }
+     }
+
+     async listFiles() {
+         try {
+            const result = await Filesystem.readdir({
+              path: '',
+              directory: Directory.Documents,
+            });      
+            
+            this.fileList = result.files.map(file => file.name || '');
+         } catch (error) {
+            alert("Error in listing files. {error}");  
+         }
+     }
 }

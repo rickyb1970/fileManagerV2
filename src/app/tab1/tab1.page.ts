@@ -17,14 +17,20 @@ export class Tab1Page {
     fileCreate(){
       if(this.checkFileName()){
           this.fServices.createFile(this.fileName, this.fileContents);
+          this.clearEntries();
       } else {
           alert("The file name is empty.");
-          
+
       }
     }
 
     private checkFileName(): boolean {
        return (this.fileName === '') ? false : true;
+    }
+
+    private clearEntries() {
+        this.fileName = '';
+        this.fileContents = '';
     }
 
 

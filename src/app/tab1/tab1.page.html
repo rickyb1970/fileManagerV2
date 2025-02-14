@@ -7,12 +7,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">File Creation</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
     <ion-item>
         <ion-label position="floating">File Name:</ion-label>
@@ -24,6 +18,7 @@
     </ion-item>
 
    <ion-content>
-       <ion-button expand="full">Save</ion-button>
+       <ion-button id="open-action-sheet" expand="full">Save</ion-button>
+       <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
    </ion-content>
 </ion-content>

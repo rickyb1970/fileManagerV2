@@ -6,19 +6,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="false">
   <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
-    <ion-item>
+    <!-- <ion-item>
         <ion-label position="floating">File Name:</ion-label>
         <ion-input [(ngModel)]="fileName" id="file-name"></ion-input>
-    </ion-item>
+    </ion-item> -->
     <ion-item>
-        <ion-label position="floating">Content:</ion-label>
-        <ion-textarea [(ngModel)]="fileContents"></ion-textarea>
+        <!-- <ion-label position="floating">Content:</ion-label> -->
+        <ion-textarea [(ngModel)]="fileContents" autoGrow="true"></ion-textarea>
     </ion-item>
 
-   <ion-content>
-       <ion-button id="open-action-sheet" expand="full">Save</ion-button>
-       <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet>
-   </ion-content>
+       <ion-fab slot="fixed" horizontal="end" vertical="top" >  
+           <ion-fab-button (click)="fileCreate()">
+                <ion-icon name="add"></ion-icon>
+           </ion-fab-button>
+       </ion-fab>
+       <!-- <ion-button id="open-action-sheet" expand="full">Save</ion-button>
+       <ion-action-sheet trigger="open-action-sheet" header="Actions" [buttons]="actionSheetButtons"></ion-action-sheet> -->
 </ion-content>

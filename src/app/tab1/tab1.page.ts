@@ -10,7 +10,7 @@ import { IonActionSheet, IonButton } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  fileName:string = '';
+  fileName:string = 'newfile.note';
   fileContents: string = '';
 
   constructor(private fServices: FileHandlingService) {}
